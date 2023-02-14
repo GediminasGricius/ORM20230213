@@ -2,13 +2,8 @@
  require_once "DB.php";
  require_once "models/Category.php";
  require_once "models/Product.php";
-
- if (isset($_GET['delete'])){
-     Category::get($_GET['delete'])->delete();
-     header("location: index.php");
-     die();
- }
-
+ $id=$_GET['id'];
+ $category=Category::get($id);
 
 ?>
 <!doctype html>
@@ -24,32 +19,23 @@
      <div class="row">
          <div class="col-md-12 mt-5">
              <div class="card">
-                 <div class="card-header">Kategorijos</div>
+                 <div class="card-header">Prekės kategorijoje: <?=$category->getName() ?></div>
                  <div class="card-body">
-                     <a href="new.php" class="btn btn-success float-end">Pridėti naują kategorija</a>
                      <table class="table">
                          <thead>
                          <tr>
                              <th>Pavadinimas</th>
-                             <th>Paveikslas</th>
-                             <th>Kiekis</th>
-                             <th>Prekės</th>
-                             <th>Veiksmai</th>
+                             <th>Aprašymas</th>
+                             <th>Kaina</th>
                          </tr>
                          </thead>
                          <tbody>
-                         <?php foreach (Category::all() as $category){ ?>
+                         <?php foreach ($category->getProducts() as $product){ ?>
                          <tr>
-                             <td><?=$category->getName()?></td>
-                             <td><?=$category->getImage()?></td>
-                             <td>
-                                 <a class="btn btn-info" href="products.php?id=<?=$category->getId()?>">Prekės</a>
-                             </td>
-                             <td><?=$category->getCount()?></td>
-                             <td>
-                                 <a class="btn btn-info" href="update.php?id=<?=$category->getId()?>">Redaguoti</a>
-                                 <a class="btn btn-danger" href="index.php?delete=<?=$category->getId()?>">Trinti</a>
-                             </td>
+                             <td><?=$product->getName()?></td>
+                             <td><?=$product->getDescription()?></td>
+                             <td><?=$product->getPrice()?></td>
+
                          </tr>
                          <?php } ?>
                          </tbody>
