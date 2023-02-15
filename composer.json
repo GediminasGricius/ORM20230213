@@ -1,0 +1,19 @@
+{
+    "name": "bit/orm",
+    "type": "project",
+    "authors": [
+        {
+            "name": "GediminasGricius",
+            "email": "g.gricius@ituostas.lt"
+        }
+    ],
+    "require": {
+        "eftec/bladeone": "^4.8"
+    },
+    "autoload": {
+       "psr-4": {
+           "models\\": "models/",
+           "helper\\": "helper/"
+       }
+    }
+}
