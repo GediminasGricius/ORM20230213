@@ -1,7 +1,8 @@
 <?php
-require_once "DB.php";
-require_once "models/Category.php";
-require_once "models/Product.php";
+require_once "vendor/autoload.php";
+
+use models\Category;
+use models\Product;
 
 if (isset($_POST['save'])){
     $category=new Category($_POST['name'], $_POST['img'], $_POST['count']);

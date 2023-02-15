@@ -1,4 +1,9 @@
 <?php
+namespace models;
+
+use helper\DB;
+use PDO;
+
 
 class Category
 {

@@ -1,7 +1,9 @@
 <?php
- require_once "DB.php";
- require_once "models/Category.php";
- require_once "models/Product.php";
+
+ use models\Category;
+
+ require_once "vendor/autoload.php";
+
  $id=$_GET['id'];
  $category=Category::get($id);
 

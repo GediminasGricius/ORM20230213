@@ -1,13 +1,18 @@
 <?php
- require_once "DB.php";
- require_once "models/Category.php";
- require_once "models/Product.php";
+
+
+use models\Category;
+
+ require_once "vendor/autoload.php";
+
 
  if (isset($_GET['delete'])){
      Category::get($_GET['delete'])->delete();
      header("location: index.php");
      die();
  }
+
+
 
 
 ?>
@@ -20,6 +25,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
+
  <div class="container">
      <div class="row">
          <div class="col-md-12 mt-5">
