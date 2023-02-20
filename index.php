@@ -1,6 +1,7 @@
 <?php
 
- use models\Category;
+use helper\Blade;
+use models\Category;
  use eftec\bladeone\BladeOne;
  require_once "vendor/autoload.php";
 
@@ -12,6 +13,9 @@
  }
 
 
-  $blade=new BladeOne( __DIR__."/views",__DIR__."/compile",BladeOne::MODE_DEBUG );
-  echo $blade->run("index");
+  $blade=new Blade( __DIR__."/views",__DIR__."/compile",BladeOne::MODE_DEBUG );
+  $blade->run("index");
+ //$blade->display("index");
+
+
 

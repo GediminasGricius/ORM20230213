@@ -130,7 +130,12 @@ class Category
         $stm->execute([]);
         $result=[];
         foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $category){
-            $result[]=new Category($category['name'],$category['img'], $category['count'], $category['id']);
+            if ($category['id']>10){
+                $result[]=new NewCategory($category['name'],$category['img'], $category['count'], $category['id']);
+            }else{
+                $result[]=new Category($category['name'],$category['img'], $category['count'], $category['id']);
+            }
+
         }
         return $result;
     }
