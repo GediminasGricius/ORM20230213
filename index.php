@@ -1,9 +1,10 @@
 <?php
 
+use helper\Admin;
 use helper\Blade;
 use models\Category;
  use eftec\bladeone\BladeOne;
- require_once "vendor/autoload.php";
+require_once "config.php";
 
 
  if (isset($_GET['delete'])){
@@ -16,6 +17,8 @@ use models\Category;
   $blade=new Blade( __DIR__."/views",__DIR__."/compile",BladeOne::MODE_DEBUG );
   $blade->run("index");
  //$blade->display("index");
+
+
 
 
 

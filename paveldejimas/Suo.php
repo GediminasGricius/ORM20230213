@@ -16,4 +16,9 @@ class Suo extends Gyvunas implements SuGarsu, SuKojom
     {
         echo 4;
     }
+
+    public function getColor()
+    {
+        return "rudas";
+    }
 }

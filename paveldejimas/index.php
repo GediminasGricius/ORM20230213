@@ -25,6 +25,9 @@ $rainius=new Kate("Rainius",12);
 $rainius->setGyvibiuKiekis(8);
 
 isleiskGarsa($lese);
+
+$g=new Suo("Sniego zmogus", 500);
+
 //$brisius->garsas();
 //$lese->garsas();
 

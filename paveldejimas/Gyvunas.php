@@ -1,6 +1,6 @@
 <?php
 
-class Gyvunas
+abstract class Gyvunas
 {
     private $name;
     private $age;
@@ -43,4 +43,6 @@ class Gyvunas
     {
         $this->age = $age;
     }
+
+    abstract public function getColor();
 }

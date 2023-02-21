@@ -1,6 +1,6 @@
 <?php
 
-class Kate extends Gyvunas implements SuGarsu, SuKojom
+final class Kate extends Gyvunas implements SuGarsu, SuKojom
 {
     private $gyvibiuKiekis=9;
 
@@ -28,5 +28,10 @@ class Kate extends Gyvunas implements SuGarsu, SuKojom
     public function getKojuKiekis()
     {
         return 4;
+    }
+
+    public function getColor()
+    {
+       return "juoda";
     }
 }

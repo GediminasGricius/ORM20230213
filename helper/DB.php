@@ -19,7 +19,7 @@ class DB
     public static function getDB():PDO
     {
         if (self::$pdo == null) {
-            self::$pdo = new PDO('mysql:host=localhost;dbname=products', 'products_db', 'products_db');
+            self::$pdo = new PDO('mysql:host=localhost;dbname='.DB_NAME, DB_USER, DB_PASSWORD);
 
         }
 
